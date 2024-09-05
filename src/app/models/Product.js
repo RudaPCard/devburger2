@@ -19,8 +19,16 @@ class Product extends Model {
                 sequelize,
             },
         );
+
+        return this;
+    }
+
+    static associate(models) {
+        this.belongsTo(models.Category, {
+            foreignKey: 'category_id',
+            as: 'category',
+        });
     }
 }
 
 export default Product;
-

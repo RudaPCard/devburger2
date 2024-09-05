@@ -32,6 +32,8 @@ class ProductController {
     async index(request, response) {
         const products = await Product.findAll();
 
+        
+
         return response.json(products);
     }
 }
